@@ -25,6 +25,11 @@ export default function MacbookModel16(props: JSX.IntrinsicElements["group"]) {
 
   const texture = useTexture("/screen.png");
 
+  // Mark the screen texture as sRGB for correct colors (Three r15x+)
+  // Set colorSpace to SRGBColorSpace so UI imagery isn't washed out
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.needsUpdate = true;
+
   useEffect(() => {
     scene.traverse((child) => {
       if (child instanceof THREE.Mesh) {
@@ -124,7 +129,7 @@ export default function MacbookModel16(props: JSX.IntrinsicElements["group"]) {
       />
       <mesh
         geometry={nodes.Object_123.geometry}
-        material={materials.sfCQkHOWyrsLmor}
+        // material={materials.sfCQkHOWyrsLmor}
         rotation={[Math.PI / 2, 0, 0]}
       >
         <meshBasicMaterial map={texture} />
