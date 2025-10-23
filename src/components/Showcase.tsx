@@ -11,7 +11,7 @@ export default function Showcase() {
         scrollTrigger: {
           trigger: "#showcase",
           start: "top top",
-          end: "bottom top", // bottom of the screen reaches the top of section
+          end: "bottom top", // bottom of the section reaches the top of view
           scrub: true, // animate the timeline with scroll
           pin: true,
         },
